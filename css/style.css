@@ -1,0 +1,226 @@
+:root{
+    --title-fonts : "Josefin Sans", sans-serif;;
+    --normal-fonts:"Mulish", sans-serif;
+    --theme-color:#FF9F67;
+    --theme-bg-color:#AE59FF;
+    --title-color:#4255A4;
+    --text-color:#6E7697;
+    --light-color:white;
+    --footer-bg:#4255A4;
+}
+body{
+    font-family: var(--normal-fonts);
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+li{
+    list-style: none;
+}
+.banner-content h1 , .coursebanner-content h1, .courses .courses-title h2 , .courses .courses-item .courses-content h5 , .about-content h2 , .subject-title h2 , .learning-content h2 , .expert-title h2 , .expert-content h4 , .carrer-content h2 , .footer-solution h4 , .contact-form form h3 , .contact-details ul li .details h6{
+    font-family: var(--title-fonts);
+}
+.services-item .services-content h5 , .courses .courses-title h2 , .courses .courses-item .courses-content h5 , .services-item .services-content p , .about-content h2 , .subject-title h2 , .learning-content h2 , .expert-title h2 , .expert-content h4 , .carrer-content h2 ,  .contact-form form h3{
+    color: var(--title-color);
+}
+::placeholder , p , .footer-solution ul li a{
+    font-size: 16px;
+}
+/* header  */
+header{
+    z-index: 99;
+}
+header .join-btn , .banner-content a , .carrer-content a{
+    background-color: var(--theme-color);
+}
+header .login-btn  , header .join-btn , .banner-content a , .courses-content .courses-btn , .subject .subject-btn , .carrer-content a{
+    padding: 10px 30px;
+    position: relative;
+    z-index: 9;
+    overflow: hidden ;
+}
+header .login-btn::after, header .join-btn::after , .banner-content a::after , .courses-content .courses-btn::after , .subject .subject-btn::after , .carrer-content a::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--theme-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    transition-timing-function:cubic-bezier(0.5,1.6,0.4,0.7);
+}
+header .join-btn:hover::after , header .login-btn:hover::after , .banner-content a:hover::after , .carrer-content a:hover::after{
+    transform: translateX(0%);
+}
+header .login-btn:hover{
+    border: 1px solid transparent !important;
+}
+/* banner  */
+.banner , .course-banner{
+    width: 100%;
+    height: 800px;
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.banner-content a::after , header .join-btn::after , .carrer-content a::after{
+    background-color: var(--theme-bg-color);
+}
+/* services  */
+.services , .courses-content .courses-btn::after , .subject .subject-btn::after{
+    transform: translateY(-100px);
+}
+/* courses  */
+.courses .courses-item .courses-content p , .expert-content p , .slick-prev:before, .slick-next:before , .contact-details ul li i , .contact-details ul li .details p {
+    color: var(--text-color); 
+}
+.courses .courses-content .courses-rate .rating i , .courses .courses-content .courses-rate p span , .about-content ul li span , .learning-content ul li span{
+    color: var(--theme-color);
+}
+.courses-content .courses-btn{
+    width: 100%;
+    border: 1px solid lightgray;
+    color: var(--title-color);
+}
+.courses-content .courses-btn:hover::after ,  .subject .subject-btn:hover::after{
+    transform: translateY(0%);
+}
+.courses-content .courses-btn:hover , .subject .subject-btn:hover{
+    color: var(--light-color);
+}
+.slick-list{
+    padding: 20px 0 !important;
+}
+/* about  */
+.about-content .growth-icon{
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom, #eae2fe 0%, #a376ff 1%, #ea68ff 98%, #ec7dfe 99%, #f3f3fa 99%, #f4f5fa 100%);
+}
+/* Subject  */
+.subject-img::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #4256a47a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s linear
+}
+.subject-img:hover::after{
+    opacity: 1;
+}
+.subject-btn{
+    border: 1px solid var(--theme-color);
+    font-size: 15px;
+    color: var(--theme-color);
+}
+/* footer  */
+footer{
+    background-color: var(--footer-bg);
+}
+.footer-about i{
+    background-color: rgba(211, 211, 211, 0.245);
+}
+.back-to-top{
+    width: 50px;
+    height: 50px;
+    background-color: var(--theme-bg-color);
+    right: 30px;
+    bottom: 30px;
+}
+.loader-overlay{
+    z-index: 9999;
+}
+.loader , .login-circle {
+    width: 100px;
+    height: 100px;
+}
+.loader i , .login-circle i{
+    color:var(--theme-bg-color);
+}
+.loader::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--theme-bg-color);
+    box-sizing: border-box;
+    animation: loader 2s infinite linear;
+}
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+header.active{
+    background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+    width: 100%;
+    animation: move 1s linear;
+    z-index: 99;
+}
+@keyframes move {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+/* ................................................Courses Page................................................*/
+.course-banner{
+    height: 500px;
+    background-image: url('../images/course-banner.png');
+}
+/*................................................ contact Page................................................ */
+.contact-form form .contact-form-btn{
+    border: 1px solid var(--theme-bg-color);
+    color: var(--theme-bg-color);
+    padding: 15px 40px;
+    transition: all 0.5s ;
+}
+.contact-form form .contact-form-btn:hover{
+    background-color: var(--theme-bg-color);
+    color: var(--light-color);
+}
+/* ................................................login Page................................................  */
+.myvideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.login-form , .registration-form{
+    width: 500px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.561);
+}
+.form-control:focus{
+    border-color: #86b6fe00; 
+    outline: 0;
+    box-shadow:  0 0 0 .25rem rgba(13, 109, 253, 0) !important;
+}
+.login-form form input , .registration-form form input{
+    border: none;
+}
+.login-form form input::placeholder , .registration-form form input::placeholder{
+    color: var(--light-color);
+}
+.registration-form{
+    height: 750px;
+}

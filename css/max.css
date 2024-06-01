@@ -1,0 +1,31 @@
+/* XL */
+@media (max-width:1399px) {
+    
+ }
+ /* LG */
+ @media (max-width:1199px) {
+    
+ }
+ /* MD */
+ @media (max-width:991px) {
+    header{
+        box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1)
+    }
+    nav ul{
+        background-color:#C86FFF;
+        margin-top: 20px;
+    }
+    nav ul li{
+        margin-bottom: 5px;
+        padding-left:20px;
+    }
+ }
+ /* SM */
+ @media (max-width:767px) {
+    
+ }
+ /* XS */
+ @media (max-width:575px) {
+     
+ }
+ 
